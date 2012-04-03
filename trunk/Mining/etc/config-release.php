@@ -74,16 +74,7 @@ $mysql_protocol = "mysqli";
 $SALT = "s98ss7fsc7fd2rf62ctcrlwztstnzve9toezexcsdhfgviuinusxcdtsvbrg";
 
 /*
- * Step 3: Optional Modules
- * 
- * TIDY_ENABLE: This enabled or disables the use of Tidy. Rule of thumb:
- *              If you do not know what tidy is, you do no need it.
- *              Keep it turned off unless you *really* need it.
- */
-$TIDY_ENABLE = false;
-
-/*
- * Step 4: IGB Visual
+ * Step 3: IGB Visual
  * 
  * IGB_VISUAL: This enables or disables the use of the IGB look or the Full
  *             Visual.  True used the light IGB look and False will use Full  
@@ -92,7 +83,7 @@ $TIDY_ENABLE = false;
 $IGB_VISUAL = true;
 
 /*
- * Step 5: System Email
+ * Step 4: System Email
  * 
  * MB_EMAIL: This will be the email address that any notification email from
  *           MiningBuddy will come from.  
@@ -104,7 +95,7 @@ $IGB_VISUAL = true;
 $MB_EMAIL = "MiningBuddy@" . $DOMAIN;
 
 /*
- * Step 6: Enable MiningBuddy
+ * Step 5: Enable MiningBuddy
  * 
  * Uncomment this line to enable MiningBuddy by removing the "//" in
  * front of the line.

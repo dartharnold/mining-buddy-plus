@@ -212,7 +212,7 @@ function globalStatistics() {
 		$trans->addCol(number_format($por, 0));
 
 		$trans->addRow();
-		$trans->addCol("Payout requests fullfilled:");
+		$trans->addCol("Payout requests fulfilled:");
 		$trans->addCol(number_format(($por - $pord), 0));
 
 		$trans->addRow();
@@ -445,11 +445,11 @@ function globalStatistics() {
 			// Now check each ore type.
 			foreach ($ORENAMES as $ORE) {
 				// And ignore never-hauled ore
-				if ($totalORE[total . $ORE] > 0) {
+				if ($totalORE[total . $DBORE[$ORE]] > 0) {
 					// We got some ore!
 					$totalOre_table->addRow();
 					$totalOre_table->addCol("<img width=\"20\" height=\"20\" src=\"./images/ores/" . $ORE . ".png\">Total " . $ORE . " mined:");
-					$totalOre_table->addCol(number_format($totalORE[total . $ORE]));
+					$totalOre_table->addCol(number_format($totalORE[total . $DBORE[$ORE]]));
 					$gotOre = true;
 				}
 			}

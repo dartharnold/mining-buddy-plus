@@ -39,6 +39,8 @@ function makeEmailReceipt($runid, $array) {
 	global $ORENAMES;
 	global $VERSION;
 	global $URL;
+	global $MB_EMAIL;
+	
 	$email = getTemplate("receipt", "email");
 	$sitename = getConfig("sitename");
 
