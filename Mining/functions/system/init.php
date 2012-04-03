@@ -38,7 +38,7 @@ require_once ('./functions/registry.php');
 
 /* get the domain name. */
 $DOMAIN = $_SERVER['HTTP_HOST'];
-$SCRIPT = dirname($_SERVER[SCRIPT_NAME]);
+$SCRIPT = dirname($_SERVER['SCRIPT_NAME']);
 $URL = "http://" . $DOMAIN . $SCRIPT;
 
 /* Initialize cookies. Mhh, cookies. */
@@ -73,7 +73,8 @@ if (ini_get('register_globals')) {
 set_error_handler('errorHandler', E_WARNING);
 
 /* Do we have the config file? */
-if ($_SESSION["initdone"] != true) {
+
+if ($_SESSION['initdone'] != true) {
 	if (!file_exists("./etc/config." . $DOMAIN . ".php")) {
 		die("Please set up MiningBuddy first by copying /etc/config-release.php " . "to /etc/config." . $DOMAIN . ".php and edit it to suit your needs.");
 	}
@@ -89,12 +90,12 @@ if (!file_exists("./images/cache/" . $DOMAIN)) {
 
 /* load Pear. */
 require_once ('DB.php');
-if (!class_exists(DB)) {
+if (!class_exists('DB')) {
 	die("<b>Error:</b> Unable to load PEAR-DB! It is a requirement. Please add this package, and try again.");
 }
 
 /* Config file compatible with this release? */
-if ($_SESSION["initdone"] != true) {
+if ($_SESSION['initdone'] != true) {
 	if ("$CONF_VER" != "$CONFIGVER") {
 		die("Your etc/config." . $DOMAIN . ".php file is out of date. Please update it.");
 	}
@@ -110,7 +111,7 @@ $DB = makeDB();
 $MySelf = new user(false, false);
 
 /* Lets check if we have the right SQL version */
-if ($_SESSION["initdone"] != true) {
+if ($_SESSION['initdone'] != true) {
 
 	global $SQLVER;
 
@@ -167,8 +168,8 @@ if (ereg("EVE-IGB", $_SERVER[HTTP_USER_AGENT])) {
 }
 
 /* If we are this far, we have passed the checks. */
-if ($_SESSION["initdone"] != true) {
-	$_SESSION["initdone"] == true;
+if ($_SESSION['initdone'] != true) {
+	$_SESSION['initdone'] == true;
 }
 
 // Load the sitename.
@@ -180,7 +181,7 @@ if ($BLESSED) {
 }
 
 //  Ebil MSIE!
-//if (!$_SESSION["initdone"] && ereg("MSIE 7", $_SERVER[HTTP_USER_AGENT]) && !isset ($_GET[image])) {
+//if (!$_SESSION['initdone'] && ereg("MSIE 7", $_SERVER[HTTP_USER_AGENT]) && !isset ($_GET[image])) {
 //	makeNotice("MiningBuddy does not work with Internet Explorer 7.0 and above. It does work, however with free alternatives like FireFox, Mozilla or Seamonkey - and of course, from in-game. " .
 //	"<br>- Mozilla: <a href=\"http:/mozilla.org\">mozilla.org</a>" . "<br>- Firefox: <a href=\"http:/mozilla.com\">mozilla.com</a>" .
 //	"<br>- Seamonkey: <a href=\"http://www.mozilla.org/projects/seamonkey/\">http://www.mozilla.org/projects/seamonkey/</a>", "error", "Browser not supported", " ", " ");
