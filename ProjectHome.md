@@ -16,10 +16,3 @@ Fleet Participation, Mining Optimizer (What rocks should be mind for mineral out
 ## **Update added:** ##
   * **Lotto is Back!!**
   * Now uses CAK (_Customizable API Key_) released with Incarna 1.1
-
-
-### Demo Site ###
-http://miningbuddy.net/demo/
-
-**User:** _Demo_<br>
-<b>Password:</b> <i>demo</i>
